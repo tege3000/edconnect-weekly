@@ -1,0 +1,47 @@
+body {
+	background-color: grey;
+
+}
+.content {
+	background-color: lightblue;
+	width: 60%;
+	margin: auto;
+	margin-top: 10%;
+}
+
+header {
+	background-color: maroon;
+}
+
+h2 {
+	color: white;
+	text-align: center;
+	border-bottom: 3px solid white;
+}
+
+h3 {
+	color: white;
+	background-color: maroon;
+	border: 1px solid maroon;
+	margin-right: 90%;
+}
+
+p, aside {
+	margin-left: 20px;
+}
+
+a:link {
+	color: red;
+}
+
+a:visited {
+	color: hotpink;
+}
+
+a:hover {
+	color: yellow;
+}
+
+a:active {
+	color: blue;
+}
