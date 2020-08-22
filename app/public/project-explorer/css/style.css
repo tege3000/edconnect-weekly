@@ -1,0 +1,22 @@
+nav {
+	padding: 10px;
+	background-color: rgb(3, 140, 252);
+	display: flex;
+	align-items: center;
+
+}
+nav a {
+	color: white;
+	text-decoration: none;
+}
+
+.nav-left {
+	flex: 1;
+}
+
+.nav-right {
+	flex: 1;
+	justify-content: flex-end;
+	text-align: right;
+}
+
