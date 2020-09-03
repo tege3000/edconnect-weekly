@@ -2,37 +2,61 @@
 <html>
 <head>
 	<title>Log In Page</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-	<header>
-		<h2> Project Explorer</h2>
-		<h3> One Stop Database for Final Year Projects </h3>
-	</header>
 	<nav>
-		<a href="">Home</a> <a href="">Projects</a> <a href="">Login</a> <a href="">Register</a>
+		<div class="nav-left">
+			<a href="/project-explorer/index.html">Project Explorer</a> 
+
+			<input id="search_term" type="text" placeholder="Search Projects"/>
+			<button id="search-btn" class="btn-major" type="button">Search</button>
+
+			<a href="/project-explorer/search.html">Projects</a> 
+			<a href="/project-explorer/createProject.html">Submit</a> 
+		</div>
+
+		<div class="nav-right">
+			<a href="/project-explorer/register.html">Sign Up</a>
+		
+			<a href="/project-explorer/login.html">Login</a> 
+
+		</div>
+		
 	</nav>
 
-	<main>
+	<main class="main-login">
 		<h3>Login</h3>
 		<form>
-			<div>
+
+			<div class="form-row-label">
 				<label>Email Address: </label>
+			</div>
+
+			<div class="form-row">
 				<input name="email" type = "text"/>
 			</div>
 			
-			<br>
-			<div>
+			<div class="form-row-label">
 				<label>Password: </label>
+			</div>
+	
+			<div class="form-row">
 				<input name="password" type = "text"/>
 			</div>
 
-			<br>
-			<input type = "submit"/>
+			<div class="form-row">
+				<button id="submit-btn" class="btn-major" type="button">Log in</button>
+
+			</div>
 		</form>
 
 	</main>
+
+	<footer>
+	  	<p>Project Explorer @ 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+	</footer>
 
 	
 </body>

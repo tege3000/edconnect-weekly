@@ -2,58 +2,102 @@
 <html>
 <head>
 	<title>Create Profile Page</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-	<header>
-		<h2> Project Explorer</h2>
-		<h3> One Stop Database for Final Year Projects </h3>
-	</header>
 	<nav>
-		<a href="">Home</a> <a href="">Projects</a> <a href="">Login</a> <a href="">Register</a>
+		<div class="nav-left">
+			<a href="/project-explorer/index.html">Project Explorer</a> 
+
+			<input id="search_term" type="text" placeholder="Search Projects"/>
+			<button id="search-btn" class="btn-major" type="button">Search</button>
+
+			<a href="/project-explorer/search.html">Projects</a> 
+			<a href="/project-explorer/createProject.html">Submit</a> 
+		</div>
+
+		<div class="nav-right">
+			<span>Signed in as: Egeonu Tito</span>
+			<a href="/project-explorer/logout.html">Logout</a> 
+
+		</div>
+		
 	</nav>
 
-	<main>
-		<section>
-			<h3>Search Project By</h3>
-			<form>
-				<div>
-					<label>Project Title: </label>
-					<input name="project-title" type = "text"/>
-				</div>
-				<br>
-				<div>
-					<label>Project Abstract: </label>
-					<input name="project-abstract" type = "text"/>
-				</div>
-				<br>
-				<div>
-					<label>Authors: </label>
-					<input name="authors" type = "text"/>
-				</div>
-				<br>
-				<div>
-					<label>Tags(s): </label>
-					<input name="tags" type = "text"/>
-				</div>
-				<br>
-				
-				<input type = "submit" value="Search"/>
-			</form>
-		</section>	
+	<main class="main-search">
 
-		<section>
-			<h3>Search Result</h3>
-			<h4>Project 4</h4>
-			<ul>
-				<li>Name: Project 4</li>
-				<li>Description: Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam hendrerit lacus vel tellus ullamcorper, ut convallis mi vestibulum. Duis et aliquet nibh. </li>
-				<li>Program: Computer Science </li>
-				<li>Authors: Egeonu Tito, Michael Jackson</li>
-				<li>Tags: #yaml, #ejs </li>
-			</ul>
+		<header class="search-header">
+			<h2>Project Gallery</h2> 
+		</header>
+		<section id="special-border">
+			
+			<div class="search-row">
+				<div class="search-col-1">
+					<input name="search-param" type = "text"/>
+				</div>
+				<div class="search-col-2">
+					<div class="search-col">
+							<div class="container">
+								<div id="search-criteria-label"> 
+									Search by
+								</div>
+								<select name="search-criteria">
+									<option value="project-name">Project Name</option>
+									<option value="project-description">Project Description</option>
+									<option value="program">Program</option>
+									<option value="authors">Authors</option>
+									<option value="tags">Tags</option>
+								</select>	
+							</div>
+												
+					</div>	
+					<div class="search-col">
+						<button id="search-btn-larger" class="btn-major" type="button">Submit</button>
+					</div>
+				</div>
+				
+			</div>
+
+		</section>
+
+		<header class="project-header">
+			<h3> All Projects</h3>
+			<span>(3 results)</span>
+
+		</header>
+		<section class="project-list">
+			<div>
+				<h4> Project 3</h4>
+				<p id="authors">Henry James, Bola Ade</p>
+				<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate arcu ut venenatis congue. </p>
+
+				<p id="tags">#yaml,     #ejs </p>
+
+				
+			</div>
+			
+			<div>
+				<h4> Project 2</h4>
+				<p id="authors">Bola Tito, Bade Thomas</p>
+				<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate arcu ut venenatis congue. </p>
+
+				<p id="tags">#python,     #django </p>			
+			</div>
+			
+			<div>
+				<h4> Project 1</h4>
+				<p id="authors">Tito Egeonu, Michael Jackson</p>
+				<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate arcu ut venenatis congue. </p>
+
+				<p id="tags">#css,     #node </p>
+			</div>
+			
 		</section>
 	</main>
+
+	<footer>
+	  	<p>Project Explorer @ 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+	</footer>
 </body>
 </html>

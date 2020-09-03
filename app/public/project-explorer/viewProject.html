@@ -2,47 +2,110 @@
 <html>
 <head>
 	<title>Home Page</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-	<header>
-		<h2> Project Explorer</h2>
-		<h3> One Stop Database for Final Year Projects </h3>
-	</header>
 	<nav>
-		<a href="">Home</a> <a href="">Projects</a> <a href="">Login</a> <a href="">Register</a>
+		<div class="nav-left">
+			<a href="/project-explorer/index.html">Project Explorer</a> 
+
+			<input id="search_term" type="text" placeholder="Search Projects"/>
+			<button id="search-btn" class="btn-major" type="button">Search</button>
+
+			<a href="/project-explorer/search.html">Projects</a> 
+			<a href="/project-explorer/createProject.html">Submit</a> 
+		</div>
+
+		<div class="nav-right">
+			<span>Signed in as: Egeonu Tito</span>
+			<a href="/project-explorer/logout.html">Logout</a> 
+
+		</div>
+		
 	</nav>
 
-	<main>
-		<section>
-			<h3>Project 4</h3>
-			<a href="">Edit Project</a>
-			<ul>
-				<li>Created By: Egeonu Tito </li>
-				<li>Date Created: 03/03/2020</li>
-				<li>Last Updated: 04/04/2020</li>
-			</ul>
+	<main class="main-view-project">
+		<header class="project-header">
+			<h2>Project 4</h2> 
+		</header>
+		<section id="special-border">
+			
+			<div class="profile-sub-header">
+				<div>Created By</div>
+				<div>Date Created </div>
+				<div>Last Updated </div>
+				<div><button class="btn-major" type="button" id=
+					"project-btn">Edit Project</button></div>
+
+			</div>
+
+			<div class="profile-sub-header">
+				<div>Egeonu Tito </div>
+				<div>2020-03-03</div>
+				<div>2020-07-13</div>
+				<div></div>
+			</div>
 		</section>
 
 		<section>
-			<h3>Project Abstract</h3>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor rutrum turpis in molestie. Mauris quis convallis augue, eget lobortis nulla. Donec erat augue, vehicula eu ante a, volutpat fringilla lectus. Nam at ante pellentesque turpis accumsan volutpat. Sed fringilla elit non hendrerit blandit.
-			</p>
+			
 		</section>
 
-		<section>
-			<h3>Project Details</h3>
-			<ul>
-				<li>Authors: Egeonu Tito </li>
-				<li>Tags: #yaml, #ejs</li>
-				<li>Project Files: <a>File 1</a>, <a>File 2</a></li>
-			</ul>
+		<section class="page-split">
+			<div>
+				<h3>Project Abstract</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor rutrum turpis in molestie. Mauris quis convallis augue, eget lobortis nulla. Donec erat augue, vehicula eu ante a, volutpat fringilla lectus. Nam at ante pellentesque turpis accumsan volutpat. Sed fringilla elit non hendrerit blandit.
+				</p>
+			</div>
+
+			<div>
+				<h3>Project Details</h3>
+
+				<div class="project-files">
+					<div class="project-file-container">
+						<div class="project-file-header">
+							<h3>Author(s)</h3>
+						</div>
+						<div class="project-author-name">
+							<span>Egeonu Tito</span>
+						</div>
+						<div class="project-author-name">
+							<span>Michael Jackson</span>
+						</div>
+						<div id="tags" class="project-file-footer">
+							<span>#yaml, #ejs</span>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="project-files">
+					<div class="project-file-container">
+						<div class="project-file-header">
+							<h3>Project files</h3>
+						</div>
+						<div class="uploaded-files">
+							<span>No file uploaded yet</span>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+			
+			
 		</section>
 
 
 	</main>
+
+	<footer>
+	  	<p>Project Explorer @ 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+	</footer>
 
 	
 </body>

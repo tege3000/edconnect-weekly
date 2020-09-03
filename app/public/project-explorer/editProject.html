@@ -2,62 +2,132 @@
 <html>
 <head>
 	<title>Home Page</title>
-	<link rel="stylesheet" href="style.css">
-
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<header>
-		<h2> Project Explorer</h2>
-		<h3> One Stop Database for Final Year Projects </h3>
-	</header>
 	<nav>
-		<a href="">Home</a> <a href="">Projects</a> <a href="">Login</a> <a href="">Register</a>
+		<div class="nav-left">
+			<a href="/project-explorer/index.html">Project Explorer</a> 
+
+			<input id="search_term" type="text" placeholder="Search Projects"/>
+			<button id="search-btn" class="btn-major" type="button">Search</button>
+
+			<a href="/project-explorer/search.html">Projects</a> 
+			<a href="/project-explorer/createProject.html">Submit</a> 
+		</div>
+
+		<div class="nav-right">
+			<span>Signed in as: Egeonu Tito</span>
+			<a href="/project-explorer/logout.html">Logout</a> 
+
+		</div>
+		
 	</nav>
 
-	<main>
-		<section>
-			<h3>Project 4</h3>
-			<ul>
-				<li>Created By: Egeonu Tito </li>
-				<li>Date Created: 03/03/2020</li>
-				<li>Last Updated: 04/04/2020</li>
-			</ul>
+	<main class="main-edit-project">
+		<header class="project-header">
+			<h2>Project 4</h2> 
+		</header>
+		<section id="special-border">
+			
+			<div class="profile-sub-header">
+				<div>Created By</div>
+				<div>Date Created </div>
+				<div>Last Updated </div>
+				<div><button class="btn-major" type="button" id=
+					"project-btn">View Project</button></div>
+
+			</div>
+
+			<div class="profile-sub-header">
+				<div>Egeonu Tito </div>
+				<div>2020-03-03</div>
+				<div>2020-07-13</div>
+				<div></div>
+			</div>
 		</section>
 
-		<section>
-			<h3>Edit Project</h3>
-			<form>
-				<div>
-					<label>Project Name: </label>
-					<input type="text" value="Project 4"/>
+		<section class= "page-split">
+			<div>
+				<header>
+					<h3>Edit Project</h3> 
+				</header>
+
+				<form>
+					<div class="form-row-label">
+						<label>Project Name: </label>
+					</div>
+
+					<div class="form-row">
+						<input name="project-name" type = "text"/>
+					</div>
+
+					<div class="form-row-label">
+						<label>Project Abstract: </label>
+					</div>
+
+					<div class="form-row">
+						<textarea name="project-abstract" rows="8" ></textarea>
+					</div>
+
+					<div class="form-row-label">
+						<label>Authors: </label>
+					</div>
+
+					<div class="form-row">
+						<input name="authors" type = "text"/>
+					</div>
+				
+					<div class="form-row-label">
+						<label>Tag(s): </label>
+					</div>
+
+					<div class="form-row">
+						<input name="tags" type = "text"/>
+					</div>
+		
+					<div class="form-row">
+						<button id="submit-btn" class="btn-major" type="button">Save</button>
+					</div>
+				</form>
+			</div>
+
+			<div>
+				<header>
+					<h3>Manage Project files</h3> 
+				</header>
+
+				<div class="container" id="browse">
+					<input name="tags" type = "text"/>
+
+					<button id="browse-btn" class="btn-minor" type="button">Browse</button>
 				</div>
-				<br>
-				<div>
-					<label>Project Abstract: </label>
-					<input type="textarea" value="Lorem ipsum dolor sit amet,"/>
+
+				<div class="project-files">
+					<div class="project-file-container">
+						<div class="project-file-header">
+							<h3>Project files</h3>
+						</div>
+						<div class="uploaded-files">
+							<span>No file uploaded yet</span>
+						</div>
+
+					</div>
+
 				</div>
-				<br>
-				<div>
-					<label>Authors: </label>
-					<input type="text" value="Egeonu Tito Amen, Michael Jackson"/>
-				</div>
-				<br>
-				<div>
-					<label>Tags(s): </label>
-					<input type="text" value="#yaml, #ejs"/>
-				</div>
-				<br>
-				<div>
-					<label>Add Project File: </label>
-					<input type="file"/>
-				</div>
-				<br>
-				<input type="submit"/>
-			</form>
+
+			</div>
+
+			
+
 		</section>
 
 
 	</main>
+
+	<footer>
+	  	<p>Project Explorer @ 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+	</footer>
 
 	
 </body>

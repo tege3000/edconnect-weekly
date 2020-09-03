@@ -2,47 +2,77 @@
 <html>
 <head>
 	<title>Home Page</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<header>
-		<h2> Project Explorer</h2>
-		<h3> One Stop Database for Final Year Projects </h3>
-	</header>
 	<nav>
-		<a href="">Home</a> <a href="">Projects</a> <a href="">Login</a> <a href="">Register</a>
+		<div class="nav-left">
+			<a href="/project-explorer/index.html">Project Explorer</a> 
+
+			<input id="search_term" type="text" placeholder="Search Projects"/>
+			<button id="search-btn" class="btn-major" type="button">Search</button>
+
+			<a href="/project-explorer/search.html">Projects</a> 
+			<a href="/project-explorer/createProject.html">Submit</a> 
+		</div>
+
+		<div class="nav-right">
+			<span>Signed in as: Egeonu Tito</span>
+			<a href="/project-explorer/logout.html">Logout</a> 
+
+		</div>
+		
 	</nav>
 
-	<main>
+	<main class= "main-create-project">
 		<section>
 			<h3>Submit Project</h3>
 			<form>
-				<div>
+
+				<div class="form-row-label">
 					<label>Project Name: </label>
-					<input type="text"/>
 				</div>
-				<br>
-				<div>
+
+				<div class="form-row">
+					<input name="project-name" type = "text"/>
+				</div>
+
+				<div class="form-row-label">
 					<label>Project Abstract: </label>
-					<input type="textarea"/>
 				</div>
-				<br>
-				<div>
+
+				<div class="form-row">
+					<textarea name="project-abstract" rows="8" ></textarea>
+				</div>
+
+				<div class="form-row-label">
 					<label>Authors: </label>
-					<input type="text"/>
 				</div>
-				<br>
-				<div>
-					<label>Tags(s): </label>
-					<input type="text"/>
+
+				<div class="form-row">
+					<input name="authors" type = "text"/>
 				</div>
-				<br>
-				<input type="submit"/>
+			
+				<div class="form-row-label">
+					<label>Tag(s): </label>
+				</div>
+
+				<div class="form-row">
+					<input name="tags" type = "text"/>
+				</div>
+	
+				<div class="form-row">
+					<button id="submit-btn" class="btn-major" type="button">Submit</button>
+				</div>
 			</form>
 		</section>
 
 
 	</main>
+
+	<footer>
+	  	<p>Project Explorer @ 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+	</footer>
 
 	
 </body>

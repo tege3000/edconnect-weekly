@@ -1,3 +1,9 @@
+body {
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
 nav {
 	padding: 10px;
 	background-color: rgb(3, 140, 252);
@@ -5,18 +11,360 @@ nav {
 	align-items: center;
 
 }
+
 nav a {
 	color: white;
 	text-decoration: none;
+	margin-right: 10px;
 }
 
+nav input {
+	margin-right: 10px;
+}
+
+nav button {
+	margin-right: 10px;
+}
+
+nav span{
+	color: white;
+	margin-right: 20px;
+}
+
+footer {
+	background-color: rgb(237, 237, 242);
+	border-radius: 5px;
+	max-width: 900px;
+	margin: auto;
+}
+
+footer p {
+	margin-left: 70%;
+	padding: 10px;
+}
+
+footer a {
+	text-decoration: none;
+	color: rgb(153, 153, 153);
+}
+
+
+h4 {
+	color: rgb(3, 140, 252);
+}
+
+h3 {
+	margin-bottom: 10px;
+}
+
+h2 {
+	margin-bottom: 0px;
+}
+
+.profile-header {
+	border:none;
+}
+
+.search-header {
+	border:none;
+}
+
+.project-header {
+	border:none;
+}
+
+header { 
+	border-bottom: 1px solid rgb(237, 237, 242);
+	margin-bottom: 20px;
+}
+
+header > h2 { 
+	display: inline-block; 
+}
+
+header > h3 { 
+	display: inline-block; 
+	margin-bottom: 0px;
+}
+
+header span { 
+	margin-left: 10px; 
+	color:rgb(153, 153, 153);
+
+}
+
+section {
+	margin-bottom: 30px;
+}
+
+
 .nav-left {
-	flex: 1;
+	flex: 0.7;
 }
 
 .nav-right {
-	flex: 1;
+	flex: 0.3;
 	justify-content: flex-end;
 	text-align: right;
 }
 
+.main-home {
+	max-width: 900px;
+	margin: auto;
+}
+
+.main-login {
+	max-width: 500px;
+	margin: auto;
+}
+
+.main-create-project {
+	max-width: 500px;
+	margin: auto;
+}
+
+.main-edit-project {
+	max-width: 900px;
+	margin: auto;
+}
+
+.main-view-project {
+	max-width: 900px;
+	margin: auto;
+}
+
+.main-register {
+	max-width: 700px;
+	margin: auto;
+}
+
+.main-profile {
+	max-width: 900px;
+	margin: auto;
+}
+
+.main-search {
+	max-width: 900px;
+	margin: auto;
+}
+
+#special-border {
+	background-color: rgb(237, 237, 242);
+	padding: 30px;
+	margin-top: 15px;
+	border-radius: 5px;
+
+}
+
+.btn-major {
+	color: white;
+	background-color: rgb(3, 140, 252);
+	border: none;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+#search-btn {
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 5px;
+
+}
+
+#search-btn-larger {
+	height: 40px;
+	width: 60px;
+}
+
+.btn-minor {
+	color: white;
+	background-color: rgb(153, 153, 153);
+	border:none;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.project-list {
+	margin: 40px auto 0 auto;
+}
+
+.project-list > div {
+	flex-basis: 30%;
+	box-sizing: border-box;
+	border: 1px solid rgb(235, 235, 237);
+	padding: 20px;
+	padding-top: 0px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+
+.page-split {
+	margin: 40px auto 0 auto;
+}
+
+.page-split > div {
+	flex-basis: 48%;
+
+}
+
+.form-row {
+	padding: 10px 0;
+	display: flex;
+	justify-content: space-between
+}
+
+.form-row-label {
+	display: flex;
+}
+
+.form-row input {
+	flex: 1;	
+	margin-right: 10px;
+}
+
+
+.form-row select {
+	flex: 1;	
+	margin-right: 10px;
+
+}
+
+.form-row textarea {
+	flex: 1;	
+	margin-right: 10px;
+
+}
+
+.form-col {
+	flex: 1;
+	display: flex;
+}
+
+#tags {
+	color: rgb(3, 140, 252);
+}
+
+#authors {
+	color: rgb(117, 114, 114);
+	font-size: 13px;
+}
+
+.profile-sub-header {
+	display: flex;
+}
+
+.profile-sub-header div {
+	flex:1;
+}
+
+.form-width {
+	max-width: 700px;
+	margin: auto;
+}
+
+.search-row {
+	padding: 10px 0;
+	display: flex;
+}
+
+.search-row input {
+	flex: 1;
+	margin-right: 10px;
+}
+
+.search-row select {
+	flex: 1;
+	height: 100%;
+}
+
+.search-col-1 {
+	flex: 0.65;
+	display: flex;
+}
+
+.search-col-2 {
+	flex: 0.35;
+	display: flex;
+}
+
+.container {
+	border: 1px solid rgb(153, 153, 153);
+	display: flex;
+	margin-right: 10px;
+	border-radius: 5px;
+	height: 40px;
+}
+
+#search-criteria-label {
+	width: 70px;
+	border-right: 1px solid rgb(153, 153, 153);
+	padding: 10px;
+}
+
+.container > input {
+	flex: 0.8;
+}
+
+.container > button {
+	flex: 0.2;
+}
+
+#browse {
+	height: 23px;
+
+}
+
+.project-files {
+	border-top: 1px solid rgb(237, 237, 242);
+	margin-top: 10px;
+}
+
+.project-file-container {
+	border: 1px solid rgb(237, 237, 242);
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+.project-file-header {
+	background-color: rgb(237, 237, 242);
+	border-bottom: 1px solid rgb(153, 153, 153);
+	height: 20px;
+	padding: 10px;
+}
+
+.project-file-header h3 {
+	margin: 0px;
+}
+
+.project-file-footer {
+	background-color: rgb(237, 237, 242);
+	height: 10px;
+	padding: 10px;
+}
+
+.uploaded-files {
+	text-align: center;
+	padding: 30px;
+}
+
+.project-author-name {
+	border-bottom: 1px solid rgb(153, 153, 153);
+	padding: 10px;
+}
+
+
+@media (min-width: 900px) {
+	.project-list {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	#project-btn {
+		margin-left: 60%;
+	}
+
+	.page-split {
+		display: flex;
+		justify-content: space-between;
+	}
+}
