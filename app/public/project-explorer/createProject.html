@@ -2,79 +2,74 @@
 <html>
 <head>
 	<title>Home Page</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<nav>
-		<div class="nav-left">
-			<a href="index.html">Project Explorer</a> 
+	<nav class="navbar navbar-expand-md navbar-dark navbar-static-top bg-primary">
+		<a class="navbar-brand" href="index.html">Project Explorer</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
 
-			<input id="search_term" type="text" placeholder="Search Projects"/>
-			<button id="search-btn" class="btn-major" type="button">Search</button>
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<form class="form-inline my-2 my-lg-0" name="prp">
+				<input id="search_term" class="form-control mr-sm-2" type="text" placeholder="Search Projects"/>
+				<button id="search-btn" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+			</form>
 
-			<a href="search.html">Projects</a> 
-			<a href="createProject.html">Submit</a> 
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="search.html">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="createProject.html">Submit</a>
+				<li>
+			</ul>
+
+			<ul class="navbar-nav float-right">
+				<li class="nav-item">
+					<a class="nav-link" href="register.html">Sign Up</a>
+				<li>
+				<li class="nav-item">
+					<a class="nav-link" href="login.html">Login</a>
+				<li>
+			</ul>
 		</div>
-
-		<div class="nav-right">
-			<a href="register.html">Sign Up</a>
-		
-			<a href="login.html">Login</a> 
-
-		</div>
-		
 	</nav>
 
-	<main class= "main-create-project">
-		<section>
-			<h3>Submit Project</h3>
+	<main role="main">
+		<div class="container" id="small-main">
+			<h2>Submit Project</h2>
 			<form>
+				<div class="form-group">
+				    <label for="project-name">Project Name:</label>
+				    <input name="project-name" type="text" class="form-control" id="project-name" placeholder="Project Name">
+				 </div>
 
-				<div class="form-row-label">
-					<label>Project Name: </label>
-				</div>
-
-				<div class="form-row">
-					<input name="project-name" type = "text"/>
-				</div>
-
-				<div class="form-row-label">
-					<label>Project Abstract: </label>
-				</div>
-
-				<div class="form-row">
-					<textarea name="project-abstract" rows="8" ></textarea>
-				</div>
-
-				<div class="form-row-label">
-					<label>Authors: </label>
-				</div>
-
-				<div class="form-row">
-					<input name="authors" type = "text"/>
-				</div>
-			
-				<div class="form-row-label">
-					<label>Tag(s): </label>
-				</div>
-
-				<div class="form-row">
-					<input name="tags" type = "text"/>
-				</div>
-	
-				<div class="form-row">
-					<button id="submit-btn" class="btn-major" type="button">Submit</button>
-				</div>
-			</form>
-		</section>
-
-
+				 <div class="form-group">
+ 				    <label for="project-abstract">Project Abstract:</label>
+ 				    <textarea name="project-abstract" class="form-control" id="project-abstract" rows="8"> </textarea>
+ 				 </div>
+				 <div class="form-group">
+ 				    <label for="authors">Authors:</label>
+ 				    <input name="authors" type="text" class="form-control" id="authors" placeholder="Authors" >
+ 				 </div>
+				 <div class="form-group">
+ 				    <label for="tags">Tag(s):</label>
+ 				    <input name="tags" type="text" class="form-control" id="tags" placeholder="Tags">
+ 				 </div>
+		      	<button class="btn btn-primary" type="submit">Submit Project</button>
+		    </form>
+		</div>
 	</main>
 
-	<footer>
-	  	<p>Project Explorer @ 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+	<footer class="container" id="footer-el">
+		<div class="jumbotron" id="footer-jumbotron">
+			<p class="text-right text-muted" id="footer-text">Project Explorer &copy; 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+
+		</div>
 	</footer>
 
-	
 </body>
 </html>

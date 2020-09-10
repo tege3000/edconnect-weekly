@@ -2,112 +2,123 @@
 <html>
 <head>
 	<title>Home Page</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
-	<nav>
-		<div class="nav-left">
-			<a href="index.html">Project Explorer</a> 
+	<nav class="navbar navbar-expand-md navbar-dark navbar-static-top bg-primary">
+		<a class="navbar-brand" href="index.html">Project Explorer</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
 
-			<input id="search_term" type="text" placeholder="Search Projects"/>
-			<button id="search-btn" class="btn-major" type="button">Search</button>
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<form class="form-inline my-2 my-lg-0" name="prp">
+				<input id="search_term" class="form-control mr-sm-2" type="text" placeholder="Search Projects"/>
+				<button id="search-btn" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+			</form>
 
-			<a href="search.html">Projects</a> 
-			<a href="createProject.html">Submit</a> 
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="search.html">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="createProject.html">Submit</a>
+				<li>
+			</ul>
+
+			<ul class="navbar-nav float-right">
+				<li class="nav-item">
+					<a class="nav-link" href="register.html">Sign Up</a>
+				<li>
+				<li class="nav-item">
+					<a class="nav-link" href="login.html">Login</a>
+				<li>
+			</ul>
 		</div>
-
-		<div class="nav-right">
-			<a href="register.html">Sign Up</a>
-		
-			<a href="login.html">Login</a> 
-
-		</div>
-		
 	</nav>
 
-	<main class="main-view-project">
-		<header class="project-header">
-			<h2>Project 4</h2> 
-		</header>
-		<section id="special-border">
-			
-			<div class="profile-sub-header">
-				<div>Created By</div>
-				<div>Date Created </div>
-				<div>Last Updated </div>
-				<div><button class="btn-major" type="button" id=
-					"project-btn">Edit Project</button></div>
+	<main role="main">
+		<div class="container">
+			<h2>Project 4</h2>
 
-			</div>
-
-			<div class="profile-sub-header">
-				<div>Egeonu Tito </div>
-				<div>2020-03-03</div>
-				<div>2020-07-13</div>
-				<div></div>
-			</div>
-		</section>
-
-		<section>
-			
-		</section>
-
-		<section class="page-split">
-			<div>
-				<h3>Project Abstract</h3>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor rutrum turpis in molestie. Mauris quis convallis augue, eget lobortis nulla. Donec erat augue, vehicula eu ante a, volutpat fringilla lectus. Nam at ante pellentesque turpis accumsan volutpat. Sed fringilla elit non hendrerit blandit.
-				</p>
-			</div>
-
-			<div>
-				<h3>Project Details</h3>
-
-				<div class="project-files">
-					<div class="project-file-container">
-						<div class="project-file-header">
-							<h3>Author(s)</h3>
-						</div>
-						<div class="project-author-name">
-							<span>Egeonu Tito</span>
-						</div>
-						<div class="project-author-name">
-							<span>Michael Jackson</span>
-						</div>
-						<div id="tags" class="project-file-footer">
-							<span>#yaml, #ejs</span>
-						</div>
-
-					</div>
-
+			<div class="jumbotron" id="special-jumbotron">
+				<div class="row">
+					<div class="col-3">Created By: </div>
+					<div class="col-3">Date Created: </div>
+					<div class="col-4">Last Updated: </div>
+					<div class="col-2"><button class="btn btn-primary" type="button" id=
+						"project-btn">Edit Project</button></div>
 				</div>
 
-				<div class="project-files">
-					<div class="project-file-container">
-						<div class="project-file-header">
-							<h3>Project files</h3>
-						</div>
-						<div class="uploaded-files">
-							<span>No file uploaded yet</span>
-						</div>
+				<div class="row">
+					<div class="col-3">Egeonu Tito</div>
+					<div class="col-3">2020-03-03</div>
+					<div class="col-6">2020-07-13</div>
+				</div>
+			</div>
 
+			<div class="row">
+				<div class="col-6">
+					<h4>Project Abstract</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor rutrum turpis in molestie. Mauris quis convallis augue, eget lobortis nulla. Donec erat augue, vehicula eu ante a, volutpat fringilla lectus. Nam at ante pellentesque turpis accumsan volutpat. Sed fringilla elit non hendrerit blandit.
+					</p>
+
+					<form>
+
+						 <div class="form-group">
+		 				    <label for="comments">Comments:</label>
+		 				    <textarea name="comments" class="form-control" id="comments" rows="6"> </textarea>
+		 				 </div>
+
+				      	<button class="btn btn-primary" type="submit">Submit</button>
+				    </form>
+					<hr>
+					<p class="text-center">
+						No comments added yet
+					</p>
+
+
+				</div>
+				<div class="col-6">
+					<h4>Project Details</h4>
+					<div class="list-group" id="proj-details">
+					  	<div class="list-group-item bg-light">
+					    	<h6>Author(s)</h6>
+						</div>
+						<div class="list-group-item">
+							Egeonu Tito
+						</div>
+						<div class="list-group-item">
+							Michael Jackson
+						</div>
+						<div class="list-group-item bg-light">
+							<span class="text-primary">#yaml,</span>
+							<span class="text-primary">#ejs</span>
+						</div>
 					</div>
-
+					<br>
+					<div class="list-group">
+					  	<div class="list-group-item bg-light">
+					    	<h6>Project files</h6>
+						</div>
+						<div class="list-group-item">
+							<p class="text-center">No file uploaded yet</p>
+						</div>
+					</div>
 				</div>
 
 			</div>
-			
-			
-		</section>
-
-
+		</div>
 	</main>
 
-	<footer>
-	  	<p>Project Explorer @ 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+	<footer class="container" id="footer-el">
+		<div class="jumbotron" id="footer-jumbotron">
+			<p class="text-right text-muted" id="footer-text">Project Explorer &copy; 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+
+		</div>
 	</footer>
 
-	
 </body>
 </html>

@@ -2,62 +2,68 @@
 <html>
 <head>
 	<title>Log In Page</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-	<nav>
-		<div class="nav-left">
-			<a href="index.html">Project Explorer</a> 
+	<nav class="navbar navbar-expand-md navbar-dark navbar-static-top bg-primary">
+		<a class="navbar-brand" href="index.html">Project Explorer</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
 
-			<input id="search_term" type="text" placeholder="Search Projects"/>
-			<button id="search-btn" class="btn-major" type="button">Search</button>
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<form class="form-inline my-2 my-lg-0" name="prp">
+				<input id="search_term" class="form-control mr-sm-2" type="text" placeholder="Search Projects"/>
+				<button id="search-btn" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+			</form>
 
-			<a href="search.html">Projects</a> 
-			<a href="createProject.html">Submit</a> 
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="search.html">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="createProject.html">Submit</a>
+				<li>
+			</ul>
+
+			<ul class="navbar-nav float-right">
+				<li class="nav-item">
+					<a class="nav-link" href="register.html">Sign Up</a>
+				<li>
+				<li class="nav-item">
+					<a class="nav-link" href="login.html">Login</a>
+				<li>
+			</ul>
 		</div>
-
-		<div class="nav-right">
-			<a href="register.html">Sign Up</a>
-		
-			<a href="login.html">Login</a> 
-
-		</div>
-		
 	</nav>
 
-	<main class="main-login">
-		<h3>Login</h3>
-		<form>
+	<main role="main">
+		<div class="container" id="small-main">
+			<h2>Login</h2>
+			<form>
+				<div class="form-group">
+				    <label for="exampleInputEmail1">Email address</label>
+				    <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address" aria-describedby="emailHelp">
+				 </div>
 
-			<div class="form-row-label">
-				<label>Email Address: </label>
-			</div>
-
-			<div class="form-row">
-				<input name="email" type = "text"/>
-			</div>
-			
-			<div class="form-row-label">
-				<label>Password: </label>
-			</div>
-	
-			<div class="form-row">
-				<input name="password" type = "text"/>
-			</div>
-
-			<div class="form-row">
-				<button id="submit-btn" class="btn-major" type="button">Log in</button>
-
-			</div>
-		</form>
-
+				 <div class="form-group">
+					 <label for="exampleInputPassword1">Password</label>
+  	 		      	<input name="password" type="password" id="exampleInputPassword1" class="form-control" placeholder="Password" required>
+ 				 </div>
+		      	<button class="btn btn-primary" type="submit">Log in</button>
+		    </form>
+		</div>
 	</main>
 
-	<footer>
-	  	<p>Project Explorer @ 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+	<footer class="container" id="footer-el">
+		<div class="jumbotron" id="footer-jumbotron">
+			<p class="text-right text-muted" id="footer-text">Project Explorer &copy; 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+
+		</div>
 	</footer>
 
-	
+
 </body>
 </html>

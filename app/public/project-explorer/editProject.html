@@ -2,134 +2,119 @@
 <html>
 <head>
 	<title>Home Page</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<nav>
-		<div class="nav-left">
-			<a href="index.html">Project Explorer</a> 
+	<nav class="navbar navbar-expand-md navbar-dark navbar-static-top bg-primary">
+		<a class="navbar-brand" href="index.html">Project Explorer</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
 
-			<input id="search_term" type="text" placeholder="Search Projects"/>
-			<button id="search-btn" class="btn-major" type="button">Search</button>
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<form class="form-inline my-2 my-lg-0" name="prp">
+				<input id="search_term" class="form-control mr-sm-2" type="text" placeholder="Search Projects"/>
+				<button id="search-btn" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+			</form>
 
-			<a href="search.html">Projects</a> 
-			<a href="createProject.html">Submit</a> 
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="search.html">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="createProject.html">Submit</a>
+				<li>
+			</ul>
+
+			<ul class="navbar-nav float-right">
+				<li class="nav-item">
+					<a class="nav-link" href="register.html">Sign Up</a>
+				<li>
+				<li class="nav-item">
+					<a class="nav-link" href="login.html">Login</a>
+				<li>
+			</ul>
 		</div>
-
-		<div class="nav-right">
-			<a href="register.html">Sign Up</a>
-		
-			<a href="login.html">Login</a> 
-
-		</div>
-		
 	</nav>
 
-	<main class="main-edit-project">
-		<header class="project-header">
-			<h2>Project 4</h2> 
-		</header>
-		<section id="special-border">
-			
-			<div class="profile-sub-header">
-				<div>Created By</div>
-				<div>Date Created </div>
-				<div>Last Updated </div>
-				<div><button class="btn-major" type="button" id=
-					"project-btn">View Project</button></div>
+	<main role="main">
+		<div class="container">
+			<h2>Project 4</h2>
 
-			</div>
-
-			<div class="profile-sub-header">
-				<div>Egeonu Tito </div>
-				<div>2020-03-03</div>
-				<div>2020-07-13</div>
-				<div></div>
-			</div>
-		</section>
-
-		<section class= "page-split">
-			<div>
-				<header>
-					<h3>Edit Project</h3> 
-				</header>
-
-				<form>
-					<div class="form-row-label">
-						<label>Project Name: </label>
-					</div>
-
-					<div class="form-row">
-						<input name="project-name" type = "text"/>
-					</div>
-
-					<div class="form-row-label">
-						<label>Project Abstract: </label>
-					</div>
-
-					<div class="form-row">
-						<textarea name="project-abstract" rows="8" ></textarea>
-					</div>
-
-					<div class="form-row-label">
-						<label>Authors: </label>
-					</div>
-
-					<div class="form-row">
-						<input name="authors" type = "text"/>
-					</div>
-				
-					<div class="form-row-label">
-						<label>Tag(s): </label>
-					</div>
-
-					<div class="form-row">
-						<input name="tags" type = "text"/>
-					</div>
-		
-					<div class="form-row">
-						<button id="submit-btn" class="btn-major" type="button">Save</button>
-					</div>
-				</form>
-			</div>
-
-			<div>
-				<header>
-					<h3>Manage Project files</h3> 
-				</header>
-
-				<div class="container" id="browse">
-					<input name="tags" type = "text"/>
-
-					<button id="browse-btn" class="btn-minor" type="button">Browse</button>
+			<div class="jumbotron" id="special-jumbotron">
+				<div class="row">
+					<div class="col-3">Created By: </div>
+					<div class="col-3">Date Created: </div>
+					<div class="col-4">Last Updated: </div>
+					<div class="col-2"><button class="btn btn-primary" type="button" id=
+						"project-btn">Edit Project</button></div>
 				</div>
 
-				<div class="project-files">
-					<div class="project-file-container">
-						<div class="project-file-header">
-							<h3>Project files</h3>
-						</div>
-						<div class="uploaded-files">
-							<span>No file uploaded yet</span>
+				<div class="row">
+					<div class="col-3">Egeonu Tito</div>
+					<div class="col-3">2020-03-03</div>
+					<div class="col-6">2020-07-13</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-6">
+					<h4>Edit Project</h4>
+					<hr>
+
+					<form>
+						<div class="form-group">
+						    <label for="project-name">Project Name:</label>
+						    <input name="project-name" type="text" class="form-control" id="project-name" placeholder="Project Name">
+						 </div>
+
+						 <div class="form-group">
+		 				    <label for="project-abstract">Project Abstract:</label>
+		 				    <textarea name="project-abstract" class="form-control" id="project-abstract" rows="8"> </textarea>
+		 				 </div>
+						 <div class="form-group">
+		 				    <label for="authors">Authors:</label>
+		 				    <input name="authors" type="text" class="form-control" id="authors" placeholder="Authors" >
+		 				 </div>
+						 <div class="form-group">
+		 				    <label for="tags">Tag(s):</label>
+		 				    <input name="tags" type="text" class="form-control" id="tags" placeholder="Tags">
+		 				 </div>
+				      	<button class="btn btn-primary" type="submit">Save</button>
+				    </form>
+
+
+				</div>
+				<div class="col-6">
+					<h4>Manage Project files</h4>
+					<hr>
+					<form>
+						<div clas="form-group">
+							<div class="custom-file">
+							   <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+							   <label class="custom-file-label" for="validatedCustomFile">Click to open file browser</label>
+							 </div>
+
 						</div>
 
+					</form>
+					<hr>
+
+					<div class="list-group">
+					  	<div class="list-group-item bg-light">
+					    	<h6>Project files</h6>
+						</div>
+						<div class="list-group-item">
+							<p class="text-center">No file uploaded yet</p>
+						</div>
 					</div>
-
 				</div>
 
 			</div>
 
-			
-
-		</section>
-
-
+		</div>
 	</main>
 
-	<footer>
-	  	<p>Project Explorer @ 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
-	</footer>
-
-	
 </body>
 </html>

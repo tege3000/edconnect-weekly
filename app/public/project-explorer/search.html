@@ -2,103 +2,147 @@
 <html>
 <head>
 	<title>Create Profile Page</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-	<nav>
-		<div class="nav-left">
-			<a href="index.html">Project Explorer</a> 
+	<nav class="navbar navbar-expand-md navbar-dark navbar-static-top bg-primary">
+		<a class="navbar-brand" href="index.html">Project Explorer</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
 
-			<input id="search_term" type="text" placeholder="Search Projects"/>
-			<button id="search-btn" class="btn-major" type="button">Search</button>
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<form class="form-inline my-2 my-lg-0" name="prp">
+				<input id="search_term" class="form-control mr-sm-2" type="text" placeholder="Search Projects"/>
+				<button id="search-btn" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+			</form>
 
-			<a href="search.html">Projects</a> 
-			<a href="createProject.html">Submit</a> 
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="search.html">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="createProject.html">Submit</a>
+				<li>
+			</ul>
+
+			<ul class="navbar-nav float-right">
+				<li class="nav-item">
+					<a class="nav-link" href="register.html">Sign Up</a>
+				<li>
+				<li class="nav-item">
+					<a class="nav-link" href="login.html">Login</a>
+				<li>
+			</ul>
 		</div>
-
-		<div class="nav-right">
-			<a href="register.html">Sign Up</a>
-		
-			<a href="login.html">Login</a> 
-
-		</div>
-		
 	</nav>
 
-	<main class="main-search">
+	<main role="main">
+		<div class="container">
+			<h2>Project Gallery</h2>
 
-		<header class="search-header">
-			<h2>Project Gallery</h2> 
-		</header>
-		<section id="special-border">
-			
-			<div class="search-row">
-				<div class="search-col-1">
-					<input name="search-param" type = "text"/>
-				</div>
-				<div class="search-col-2">
-					<div class="search-col">
-							<div class="container">
-								<div id="search-criteria-label"> 
-									Search by
-								</div>
-								<select name="search-criteria">
-									<option value="project-name">Project Name</option>
-									<option value="project-description">Project Description</option>
+			<div class="jumbotron" id="special-jumbotron">
+				<form>
+					<div class="row">
+						<div class="col-6">
+							<label class="sr-only" for="search-project">Name</label>
+							<input id="search-project" class="form-control" type="text" placeholder="Search project name, authors, abstract, tags"/>
+						</div>
+
+						<div class="col-4">
+							<label class="sr-only" for="search-criteria">Username</label>
+							  <div class="input-group">
+							    <div class="input-group-prepend">
+							      <div class="input-group-text">Search by</div>
+							    </div>
+								<select class="form-control" id="search-criteria" name="search-criteria">
+									<option value="project-name">Name</option>
+									<option value="project-description">Description</option>
 									<option value="program">Program</option>
 									<option value="authors">Authors</option>
 									<option value="tags">Tags</option>
-								</select>	
-							</div>
-												
-					</div>	
-					<div class="search-col">
-						<button id="search-btn-larger" class="btn-major" type="button">Submit</button>
+								</select>
+							  </div>
+
+						</div>
+						<div class="col-2">
+							<button id="search-btn" class="btn btn-primary" type="submit">Search</button>
+						</div>
 					</div>
-				</div>
-				
+
+				</form>
 			</div>
 
-		</section>
-
-		<header class="project-header">
-			<h3> All Projects</h3>
-			<span>(3 results)</span>
-
-		</header>
-		<section class="project-list">
-			<div>
-				<h4> Project 3</h4>
-				<p id="authors">Henry James, Bola Ade</p>
-				<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate arcu ut venenatis congue. </p>
-
-				<p id="tags">#yaml,     #ejs </p>
-
-				
+			<div id="inline-header">
+				<span class="h4 pull-left">All Projects</span>
+				<medium class="text-muted">(3 results)</medium>
 			</div>
-			
-			<div>
-				<h4> Project 2</h4>
-				<p id="authors">Bola Tito, Bade Thomas</p>
-				<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate arcu ut venenatis congue. </p>
+			<div class="album">
+				<div class="container" id="album-container">
+		          <div class="row">
+					  <div class="col-md-4">
+		                <div class="card mb-4 box-shadow">
+		                  <div class="card-body">
+							<h4> Project 3</h4>
+							<small class="text-muted">Henry James, Bola Ade</small>
+		                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate arcu ut venenatis congue.</p>
+		                    <div class="d-flex justify-content-between align-items-center">
+								<div class="">
+  								  	<span class="text-primary">#yaml,</span>
+  								  	<span class="text-primary">#ejs</span>
+  							  	</div>
+		                    </div>
+		                  </div>
+		                </div>
+		              </div>
 
-				<p id="tags">#python,     #django </p>			
-			</div>
-			
-			<div>
-				<h4> Project 1</h4>
-				<p id="authors">Tito Egeonu, Michael Jackson</p>
-				<p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate arcu ut venenatis congue. </p>
+					  <div class="col-md-4">
+		                <div class="card mb-4 box-shadow">
+		                  <div class="card-body">
+							<h4> Project 2</h4>
+							<small class="text-muted">Bola Tito, Bade Thomas</small>
+		                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate arcu ut venenatis congue.</p>
+		                    <div class="d-flex justify-content-between align-items-center">
+								<div class="">
+  		                        	<span class="text-primary">#python,</span>
+  									<span class="text-primary">#django</span>
+  		                      	</div>
 
-				<p id="tags">#css,     #node </p>
+		                    </div>
+		                  </div>
+		                </div>
+		              </div>
+
+					  <div class="col-md-4">
+		                <div class="card mb-4 box-shadow">
+		                  <div class="card-body">
+							<h4> Project 1</h4>
+							<small class="text-muted">Tito Egeonu, Michael Jackson</small>
+		                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate arcu ut venenatis congue.</p>
+		                    <div class="d-flex justify-content-between align-items-center">
+		                      <div class="">
+		                        <span class="text-primary">#css,</span>
+								<span class="text-primary">#node</span>
+		                      </div>
+		                    </div>
+		                  </div>
+		                </div>
+		              </div>
+				  </div>
+			  </div>
 			</div>
-			
-		</section>
+		</div>
 	</main>
 
-	<footer>
-	  	<p>Project Explorer @ 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+	<footer class="container" id="footer-el">
+		<div class="jumbotron" id="footer-jumbotron">
+			<p class="text-right text-muted" id="footer-text">Project Explorer &copy; 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+
+		</div>
 	</footer>
+
+
 </body>
 </html>

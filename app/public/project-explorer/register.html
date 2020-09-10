@@ -2,123 +2,109 @@
 <html>
 <head>
 	<title>Sign Up Page</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
-	<nav>
-		<div class="nav-left">
-			<a href="index.html">Project Explorer</a> 
+	<nav class="navbar navbar-expand-md navbar-dark navbar-static-top bg-primary">
+		<a class="navbar-brand" href="index.html">Project Explorer</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
 
-			<input id="search_term" type="text" placeholder="Search Projects"/>
-			<button id="search-btn" class="btn-major" type="button">Search</button>
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<form class="form-inline my-2 my-lg-0" name="prp">
+				<input id="search_term" class="form-control mr-sm-2" type="text" placeholder="Search Projects"/>
+				<button id="search-btn" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+			</form>
 
-			<a href="search.html">Projects</a> 
-			<a href="createProject.html">Submit</a> 
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="search.html">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="createProject.html">Submit</a>
+				<li>
+			</ul>
+
+			<ul class="navbar-nav float-right">
+				<li class="nav-item">
+					<a class="nav-link" href="register.html">Sign Up</a>
+				<li>
+				<li class="nav-item">
+					<a class="nav-link" href="login.html">Login</a>
+				<li>
+			</ul>
 		</div>
-
-		<div class="nav-right">
-			<a href="register.html">Sign Up</a>
-		
-			<a href="login.html">Login</a> 
-
-		</div>
-		
 	</nav>
+	<main role="main">
+		<div class="container" id="medium-main">
+			<form>
+				<h2>Sign up</h2>
+				<div class="form-row">
+				    <div class="form-group col-md-6">
+				      <label for="inputFirstName">First Name:</label>
+				      <input name="first-name" type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+				    </div>
+				    <div class="form-group col-md-6">
+				      <label for="inputLastName">Last Name:</label>
+				      <input name="last-name" type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+				    </div>
+				 </div>
 
-	<main class="main-register">
-		<h3>Sign up</h3>
-		<form>
-			<div class="form-row-label">
-				<div class="form-col" >
-					<label>First Name: </label>
-				</div>
-				<div class="form-col" >
-					<label>Last Name: </label>
-				</div>
-			</div>
-			<div class="form-row">
-				<div class="form-col">
-					<input name="first-name" type = "text"/>
-				</div>
-				<div class="form-col">
-					<input name="last-name" type = "text"/>
-				</div>	
-			</div>
+				 <div class="form-row">
+ 				    <div class="form-group col-md-6">
+ 				      <label for="inputEmailAddress">Email Address:</label>
+ 				      <input name="email" type="email" class="form-control" id="inputEmailAddress" placeholder="Email Address">
+ 				    </div>
+ 				    <div class="form-group col-md-6">
+ 				      <label for="inputPassword">Password:</label>
+ 				      <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
+ 				    </div>
+ 				 </div>
 
-			<div class="form-row-label">
-				<div class="form-col" >
-					<label>Email Address: </label>
-				</div>
-				<div class="form-col" >
-					<label>Password: </label>
-				</div>
-			</div>
-			
-			<div class="form-row">
-				<div class="form-col">
-					<input name="email" type = "text"/>
-				</div>
-				<div class="form-col">
-					<input name="password" type = "password"/>
-				</div>	
-			</div>
-			
-			<div class="form-row-label">
-				<div class="form-col" >
-					<label>Program: </label>
-				</div>
-				<div class="form-col" >
-					<div class="form-col" >
-						<label>Matriculation number: </label>
-					</div>
-					<div class="form-col" >
-						<label>Graduation year: </label>
-					</div>
-				</div>
-			</div>
+				 <div class="form-row">
+ 				    <div class="form-group col-md-6">
+ 				      	<label for="inputProgram">Program:</label>
+					  	<select id="inputProgram" name="program" class="form-control">
+	  						<option value="Computer Science">Computer Science </option>
+	  						<option value="Mass Communication">Mass Communication </option>
+	  						<option value="Law">Law</option>
+  						</select>
+ 				    </div>
+					<div class="form-group col-md-3">
+ 				      <label for="inputMatricNumber">Matriculation number:</label>
+ 				      <input name="matric-num" type="text" class="form-control" id="inputMatricNumber" placeholder="Matric Number">
+ 				    </div>
+					<div class="form-group col-md-3">
+ 				      <label for="inputGraduationYear">Graduation year:</label>
+					  <select id="inputGraduationYear" name="graduation-year" class="form-control">
+					  	<option value="2020">2020</option>
+					  	<option value="2019">2019</option>
+					  	<option value="2018">2018</option>
+					  	<option value="2017">2017</option>
+					  	<option value="2016">2016</option>
+					  	<option value="2015">2015</option>
+					  	<option value="2014">2014</option>
+					  	<option value="2013">2013</option>
+					  	<option value="2012">2012</option>
+					  	<option value="2011">2011</option>
+					  	<option value="2010">2010</option>
+					  </select>
+				  </div>
 
-			<div class="form-row">
-				<div class="form-col" >
-					<select name="program">
-						<option value="Computer Science">Computer Science </option>
-						<option value="Mass Communication">Mass Communication </option>
-						<option value="Law">Law</option>
-					</select>
-				</div>
-				<div class="form-col" >
-					<div class="form-col" >
-						<input name="matric-num" type = "text"/>
-					</div>
-					<div class="form-col" >
-						<select name="graduation-year">
-							<option value="2020">2020</option>
-							<option value="2019">2019</option>
-							<option value="2018">2018</option>
-							<option value="2017">2017</option>
-							<option value="2016">2016</option>
-							<option value="2015">2015</option>
-							<option value="2014">2014</option>
-							<option value="2013">2013</option>
-							<option value="2012">2012</option>
-							<option value="2011">2011</option>
-							<option value="2010">2010</option>
-						</select>					
-					</div>
-				</div>
-			</div>
-
-			<div class="form-row">
-				<button id="submit-btn" class="btn-major" type="button">Sign Up</button>
-			</div>
-		</form>
-
+ 				 </div>
+				 <button class="btn btn-primary" type="submit">Sign up</button>
+		    </form>
+		</div>
 	</main>
 
-	<footer>
-	  	<p>Project Explorer @ 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+	<footer class="container" id="footer-el">
+		<div class="jumbotron" id="footer-jumbotron">
+			<p class="text-right text-muted" id="footer-text">Project Explorer &copy; 2020 <a href="mailto:teetoegeonu@gmail.com">Egeonu Tito</a></p>
+
+		</div>
 	</footer>
 
-	
 </body>
 </html>
