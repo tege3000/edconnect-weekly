@@ -47,8 +47,8 @@
 					<div class="col-3">Created By: </div>
 					<div class="col-3">Date Created: </div>
 					<div class="col-4">Last Updated: </div>
-					<div class="col-2"><button class="btn btn-primary" type="button" id=
-						"project-btn">Edit Project</button></div>
+					<div class="col-2"><a href="viewProject.html" class="btn btn-primary" type="button" id=
+						"project-btn">View Project</a></div>
 				</div>
 
 				<div class="row">
@@ -66,7 +66,7 @@
 					<form>
 						<div class="form-group">
 						    <label for="project-name">Project Name:</label>
-						    <input name="project-name" type="text" class="form-control" id="project-name" placeholder="Project Name">
+						    <input name="name" type="text" class="form-control" id="project-name" placeholder="Project Name">
 						 </div>
 
 						 <div class="form-group">
@@ -101,13 +101,13 @@
 					</form>
 					<hr>
 
-					<div class="list-group">
-					  	<div class="list-group-item bg-light">
-					    	<h6>Project files</h6>
+					<div class="card">
+						<div class="card-header">
+							Project files
 						</div>
-						<div class="list-group-item">
-							<p class="text-center">No file uploaded yet</p>
-						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item text-center">No file uploaded yet</li>
+						</ul>
 					</div>
 				</div>
 
