@@ -19,8 +19,11 @@ class User {
 
 class Users extends DataModel {
     authenticate(email, password) {
-        if(password && email) {
-            return true;
+        for(let i = 0; i < this.data.length; i++) {
+            if(this.data[i].email == email && this.data[i].password == password) {
+                return true;
+            }
+
         }
         return false;
     }
@@ -61,6 +64,7 @@ class Users extends DataModel {
                 break;
             }
         }
+
 
         for(let i = 0; i < this.data.length; i++) {
             if(this.data[i].matricNumber == obj.matricNumber) {
