@@ -438,7 +438,7 @@ if(window.location.href.includes("?")) {
                 })
                 .then((data) => {
                     let projectAuthor = document.getElementById("project_author");
-                    projectAuthor.textContent = data.lastname + " " + data.firstname;
+                    projectAuthor.textContent = data.firstname + " " + data.lastname;
 
                     // console.log(data);
                 })
