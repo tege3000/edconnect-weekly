@@ -397,20 +397,23 @@ if(window.location.href.includes("?")) {
         .then((data) => {
             let projectName = document.getElementById("project_name");
             let projectAbstract = document.getElementById("project_abstract");
-            let projectAuthors = document.getElementById("project_authors");
+            let defaultProjectAuthors = document.getElementById("default_proj_authors");
             let projectTags = document.getElementById("project_tags");
+            
 
             projectName.textContent = data.name;
             projectAbstract.textContent = data.abstract;
 
-            projectAuthors.childNodes[1].style.display = "none";
-            projectAuthors.childNodes[3].style.display = "none";
+            defaultProjectAuthors.childNodes[1].style.display = "none";
+            defaultProjectAuthors.childNodes[3].style.display = "none";
+
             for(let i = 0; i < data.authors.length; i++) {
                 let author = document.createElement("div");
                 author.className = "list-group-item";
+                author.id = "project_author";
 
                 author.textContent = data.authors[i];
-                projectAuthors.appendChild(author);
+                defaultProjectAuthors.appendChild(author);
             }
 
             projectTags.childNodes[1].style.display = "none";
