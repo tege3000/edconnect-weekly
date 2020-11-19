@@ -22,13 +22,6 @@ const Project =  (props) => {
     const [abstract, setAbstract] = useState("");
     const [tags, setTags] = useState([""]);
 
-    // const [project, setProject] = useState({
-    //     name: "Project Test 1",
-    //     authors: ["Kendrick Lamar", "Jermaine Cole"],
-    //     abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate arcu ut venenatis congue.",
-    //     tags: ["#yaml", "#ejs"]
-    // });
-
     useEffect(() => {
         fetch(viewProjectUri)
             .then((response) => {
