@@ -64,9 +64,9 @@ const Project =  (props) => {
                     </Row>
 
                     <Row>
-                        <Col id="project_author" md={3}>
+                        <Col md={3}>
                             {authors.map((author) => (
-                                <p>{author}</p>
+                                <p id="project_author">{author}</p>
                             ))} 
                         </Col>
                         <Col md={3}>2020-03-03</Col>

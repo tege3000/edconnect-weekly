@@ -62,8 +62,8 @@ const Header =  (props) => {
 
                 {(document.cookie) ? 
                     <Nav className="justify-content-end">
-                        <Nav.Link href="" onClick={handleLogout}>Log Out</Nav.Link>
-                        <Nav.Link href="">Hi, {firstName}</Nav.Link>
+                        <Nav.Link href="" onClick={handleLogout}>Logout</Nav.Link>
+                        <Nav.Link href="">Hi {firstName}</Nav.Link>
                     </Nav>
                 : 
                     <Nav className="justify-content-end">
