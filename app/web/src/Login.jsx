@@ -45,12 +45,12 @@ const Login = (props) => {
             body: JSON.stringify(loginDetails)
         })
             .then((response) => {
-                // if(response.status === 200) {
+                if(response.status === 200) {
                     return response.json();
-                // }
-                // else {
-                //     throw new Error("Invalid email/password");
-                // }
+                }
+                else {
+                    throw new Error("Invalid email/password");
+                }
             })
             .then((data) => {
                 // console.log(data);
@@ -66,6 +66,7 @@ const Login = (props) => {
                 }
             })
             .catch((error) => {
+                setError("Invalid email/password");
                 console.log("ERROR", error);
             });
     }
