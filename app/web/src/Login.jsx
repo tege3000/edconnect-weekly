@@ -48,6 +48,9 @@ const Login = (props) => {
                 if(response.status === 200) {
                     return response.json();
                 }
+                else {
+                    throw new Error("response not equal to 200");
+                }
             })
             .then((data) => {
                 // console.log(data);

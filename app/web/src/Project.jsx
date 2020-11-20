@@ -12,6 +12,8 @@ import {
 from 'react-bootstrap';
 import Layout from "./shared/Layout";
 const projectsUri = "/api/projects/";
+const usersUri = "/api/users/";
+
 
 const Project =  (props) => {
     const params = useParams();
@@ -22,6 +24,7 @@ const Project =  (props) => {
     const [abstract, setAbstract] = useState("");
     const [tags, setTags] = useState([""]);
     const [createdBy, setCreatedBy] = useState("");
+    const [projectAuthor, setProjectAuthor] = useState("");
 
     useEffect(() => {
         fetch(viewProjectUri)
@@ -39,8 +42,21 @@ const Project =  (props) => {
             })
             .catch((error) => {
                 console.log("ERROR", error);
-            })  
+            }) 
     }, [])
+
+    useEffect(() => {
+        fetch(usersUri+createdBy)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                setProjectAuthor(data.firstname + " " + data.lastname);
+            })
+            .catch((error) => {
+                console.log("ERROR", error);
+            });
+    })
     
     return  (
         <Layout>
@@ -60,7 +76,7 @@ const Project =  (props) => {
 
                     <Row>
                         <Col md={3}>
-                            {createdBy}
+                            {projectAuthor}
                         </Col>
                         <Col md={3}>2020-03-03</Col>
                         <Col md={3}>2020-07-13</Col>
