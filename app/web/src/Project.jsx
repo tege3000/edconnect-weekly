@@ -23,7 +23,6 @@ const Project =  (props) => {
     const [authors, setAuthors] = useState([""]);
     const [abstract, setAbstract] = useState("");
     const [tags, setTags] = useState([""]);
-    const [createdBy, setCreatedBy] = useState("");
     const [projectAuthor, setProjectAuthor] = useState("");
 
     useEffect(() => {
@@ -38,25 +37,23 @@ const Project =  (props) => {
                 setAuthors(data.authors);
                 setAbstract(data.abstract);
                 setTags(data.tags);
-                setCreatedBy(data.createdBy);
+
+                fetch(usersUri+data.createdBy)
+                    .then((response) => {
+                        return response.json();
+                    })
+                    .then((data) => {
+                        setProjectAuthor(data.firstname + " " + data.lastname);
+                    })
+                    .catch((error) => {
+                        console.log("ERROR", error);
+                    });
             })
             .catch((error) => {
                 console.log("ERROR", error);
             }) 
-    }, [])
 
-    useEffect(() => {
-        fetch(usersUri+createdBy)
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                setProjectAuthor(data.firstname + " " + data.lastname);
-            })
-            .catch((error) => {
-                console.log("ERROR", error);
-            });
-    })
+    }, [])
     
     return  (
         <Layout>

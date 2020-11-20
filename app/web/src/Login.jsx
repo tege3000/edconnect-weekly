@@ -49,7 +49,7 @@ const Login = (props) => {
                     return response.json();
                 }
                 else {
-                    throw new Error("response not equal to 200");
+                    throw new Error("Invalid email/password");
                 }
             })
             .then((data) => {
