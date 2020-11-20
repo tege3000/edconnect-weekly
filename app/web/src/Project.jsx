@@ -21,6 +21,7 @@ const Project =  (props) => {
     const [authors, setAuthors] = useState([""]);
     const [abstract, setAbstract] = useState("");
     const [tags, setTags] = useState([""]);
+    const [createdBy, setCreatedBy] = useState("");
 
     useEffect(() => {
         fetch(viewProjectUri)
@@ -34,6 +35,7 @@ const Project =  (props) => {
                 setAuthors(data.authors);
                 setAbstract(data.abstract);
                 setTags(data.tags);
+                setCreatedBy(data.createdBy);
             })
             .catch((error) => {
                 console.log("ERROR", error);
@@ -58,9 +60,7 @@ const Project =  (props) => {
 
                     <Row>
                         <Col md={3}>
-                            {authors.map((author) => (
-                                <p id="project_author">{author}</p>
-                            ))} 
+                            {createdBy}
                         </Col>
                         <Col md={3}>2020-03-03</Col>
                         <Col md={3}>2020-07-13</Col>

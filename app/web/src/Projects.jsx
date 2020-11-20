@@ -22,7 +22,7 @@ const Projects = (props) => {
 
     return (
         <>
-            {(projects.length == 0) || (projects === undefined) ?
+            {(projects.length === 0) || (projects === undefined) ?
                 null
             : 
                 projects.map((project, index) => (

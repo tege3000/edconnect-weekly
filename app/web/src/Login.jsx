@@ -45,7 +45,9 @@ const Login = (props) => {
             body: JSON.stringify(loginDetails)
         })
             .then((response) => {
-                return response.json();
+                if(response.status === 200) {
+                    return response.json();
+                }
             })
             .then((data) => {
                 // console.log(data);
