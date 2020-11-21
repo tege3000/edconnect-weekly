@@ -9,10 +9,8 @@ import {useHistory} from 'react-router-dom';
 import Layout from './shared/Layout';
 const loginUri = "/api/login/";
 
-
 const Login = (props) => {
     let history = useHistory();
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -54,16 +52,11 @@ const Login = (props) => {
             })
             .then((data) => {
                 // console.log(data);
-    
-                if(data.status === "ok") {
-                    let key = "uid";
-                    let value = data.data.id;
-                    document.cookie = `${key}= ${value}; path=/`;
-                    history.push("/");
-                }
-                else {    
-                    setError("Invalid email/password");
-                }
+                let key = "uid";
+                let value = data.data.id;
+                document.cookie = `${key}= ${value}; path=/`;
+                history.push("/");
+      
             })
             .catch((error) => {
                 setError("Invalid email/password");

@@ -72,7 +72,7 @@ const Project =  (props) => {
                     </Row>
 
                     <Row>
-                        <Col md={3}>
+                        <Col id="project_author"md={3}>
                             {projectAuthor}
                         </Col>
                         <Col md={3}>2020-03-03</Col>
