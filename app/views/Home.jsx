@@ -8,9 +8,9 @@ import {
 import Projects from './Projects';
 import Layout from './shared/Layout';
 
-const Home = (props) => {
+const Home = ({projects, user}) => {
     return (
-        <Layout>
+        <Layout user={user}>
             <>
                 <Container>
                     <Jumbotron>
@@ -27,7 +27,7 @@ const Home = (props) => {
                     <div className="album">
                         <Container id="album-container">
                             <Row className="showcase">
-                                <Projects type="getAllProjects" />
+                                <Projects projects={projects} />
                             </Row>
                         </Container>
                     </div>

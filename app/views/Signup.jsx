@@ -5,17 +5,9 @@ import {
     Button,
     Container,
 } from 'react-bootstrap';
-import {useHistory} from 'react-router-dom';
 import Layout from './shared/Layout';
 
-const programsUri = "/api/programs/";
-const graduationYearsUri = "/api/graduationYears/";
-const registerUri = "/api/register/";
-
-const Signup = (props) => {
-    let history = useHistory();
-    const [programs, fillPrograms] = useState(["Computer Science", "Mass Comm", "Law"]);
-    const [gradYears, fillGradYears] = useState(["2020", "2019", "2018", "2017", "2016"]);
+const Signup = ({programs, gradYears, errors}) => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -23,7 +15,6 @@ const Signup = (props) => {
     const [matricNumber, setMatricNumber] = useState("");
     const [program, setProgram] = useState(programs[0]);
     const [gradYear, setGradYear] = useState(gradYears[0]);
-    const [errors, setErrors] = useState([""]);
 
     const handleInputChange = (event) => {
         const {name, value} = event.target;
@@ -53,88 +44,19 @@ const Signup = (props) => {
 
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        let signUpDetails = { 
-            "firstname": firstName,
-            "lastname": lastName,
-            "email": email,
-            "password": password,
-            "matricNumber": matricNumber,
-            "program": program,
-            "graduationYear": gradYear 
-        };
-
-        fetch(registerUri, {
-            method: "POST",
-            headers: {
-                "Content-Type" : "application/json",
-            },
-            body: JSON.stringify(signUpDetails)
-        })
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                if(data.status === "ok") {
-                    let key = "uid";
-                    let value = data.data.id;
-                    document.cookie = `${key}= ${value}; path=/`;
-
-                    history.push("/");
-                }
-                else {
-                    setErrors(data.errors);
-                }       
-            })
-            .catch((error) => {
-                // handling errors
-                console.log("ERROR:", error);
-            });
-        
-    }
-
-    useEffect(() => {
-        fetch(programsUri)
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                console.log(data);
-                fillPrograms(data);
-            })
-            .catch((error) => {
-                console.log("ERROR", error);
-            })  
-    }, [])
-
-    useEffect(() => {
-        fetch(graduationYearsUri)
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                console.log(data);
-                fillGradYears(data);
-            })
-            .catch((error) => {
-                console.log("ERROR", error);
-            })  
-    }, [])
 
     return (
         <Layout>
             <>
                 <Container id="medium-main">
-                    {errors[0] !== "" ?
+                    {errors != "" ?
                         <div className = "alert alert-danger"> 
                             {errors.map((error) => (
                                 <p>{error}</p>
                             ))}
                         </div>
                     : null}
-                    <Form id="signupForm" onSubmit={handleSubmit} noValidate>
+                    <Form id="signupForm" method="post" action="signup" noValidate>
                         <h2>Sign up</h2>
                         <Form.Row>
                             <Form.Group className="col-md-6">

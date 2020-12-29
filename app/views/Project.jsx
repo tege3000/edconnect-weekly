@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import React from 'react';
 import {
         Container,
         Form,
@@ -11,50 +10,11 @@ import {
     } 
 from 'react-bootstrap';
 import Layout from "./shared/Layout";
-const projectsUri = "/api/projects/";
-const usersUri = "/api/users/";
 
 
-const Project =  (props) => {
-    const params = useParams();
-    const viewProjectUri = projectsUri + params['id']; 
-    console.log(viewProjectUri);
-    const [projectName, setProjectName] = useState("");
-    const [authors, setAuthors] = useState([""]);
-    const [abstract, setAbstract] = useState("");
-    const [tags, setTags] = useState([""]);
-    const [projectAuthor, setProjectAuthor] = useState("");
+const Project =  ({projectName, authors, abstract, tags, projectAuthor}) => {
 
-    useEffect(() => {
-        fetch(viewProjectUri)
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                console.log(data);
 
-                setProjectName(data.name);
-                setAuthors(data.authors);
-                setAbstract(data.abstract);
-                setTags(data.tags);
-
-                fetch(usersUri+data.createdBy)
-                    .then((response) => {
-                        return response.json();
-                    })
-                    .then((data) => {
-                        setProjectAuthor(data.firstname + " " + data.lastname);
-                    })
-                    .catch((error) => {
-                        console.log("ERROR", error);
-                    });
-            })
-            .catch((error) => {
-                console.log("ERROR", error);
-            }) 
-
-    }, [])
-    
     return  (
         <Layout>
             <Container>
