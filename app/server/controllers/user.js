@@ -19,8 +19,15 @@ router.get('/signup', (req, res) => {
 });
 
 router.post('/signup', (req, res) => {
-    const data = req.body
-    const [isCreated, result] = User.create(data)
+    const firstname = req.body.firstName
+    const lastname = req.body.lastName
+    const email = req.body.email
+    const password = req.body.password
+    const matricNumber = req.body.matricNumber
+    const program = req.body.program
+    const graduationYear = req.body.graduationYear
+
+    const [isCreated, result] = User.create({firstname, lastname, email, password, matricNumber, program, graduationYear})
     if(isCreated) {
         req.session.user = result
         res.redirect('/')

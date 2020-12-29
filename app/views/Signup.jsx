@@ -25,11 +25,11 @@ const Signup = ({programs, gradYears, errors}) => {
                         <Form.Row>
                             <Form.Group className="col-md-6">
                                 <Form.Label>First Name:</Form.Label>
-                                <FormControl name="firstname" type="text" id="inputFirstName" placeholder="First Name"/>
+                                <FormControl name="firstName" type="text" id="inputFirstName" placeholder="First Name"/>
                             </Form.Group>
                             <Form.Group className="col-md-6">
                                 <Form.Label>Last Name:</Form.Label>
-                                <FormControl name="lastname" type="text" className="form-control" id="inputLastName" placeholder="Last Name"/>
+                                <FormControl name="lastName" type="text" className="form-control" id="inputLastName" placeholder="Last Name"/>
                             </Form.Group>
                         </Form.Row>
 

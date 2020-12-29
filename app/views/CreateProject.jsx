@@ -13,7 +13,7 @@ const CreateProject =  ({errors}) => {
     return  (
         <Layout>
             <Container id="small-main">
-                {errors !== "" ?
+                {errors[0] !== "" ?
                     <div className = "alert alert-danger"> 
                         {errors.map((error) => (
                             <p>{error}</p>
