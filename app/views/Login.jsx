@@ -7,13 +7,13 @@ import {
 } from 'react-bootstrap';
 import Layout from './shared/Layout';
 
-const Login = ({error}) => {
+const Login = ({error, user}) => {
 
     return (
-        <Layout>
+        <Layout user={user}>
             <>
                 <Container id="small-main">
-                    {error ?
+                    {error != "" ?
                         <div className = "alert alert-danger"> 
                             <p>{error}</p>
                         </div>

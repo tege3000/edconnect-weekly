@@ -9,8 +9,9 @@ router.get('/projects/submit', (req, res) => {
         res.redirect('/')
     }
     else {
+        const user = req.session.user
         const errors = req.flash("error")
-        res.render('CreateProject', {errors})
+        res.render('CreateProject', {errors, user})
     }
 })
 
@@ -36,6 +37,7 @@ router.post('/projects/submit', (req, res) => {
 })
 
 router.get('/project/:id', (req, res) => {
+    const user = req.session.user
     const id = req.params.id
     const project = Projects.getById(id)
     const projectName = project.name
@@ -50,7 +52,7 @@ router.get('/project/:id', (req, res) => {
         })
         .then((data) => {
             let projectAuthor = data.firstname + " " + data.lastname
-            res.render('Project', {projectName, authors, abstract, tags, projectAuthor})
+            res.render('Project', {projectName, authors, abstract, tags, projectAuthor, user: user})
 
         })
         .catch((error) => {
