@@ -7,10 +7,10 @@ import {
 } from 'react-bootstrap';
 import Layout from './shared/Layout';
 
-const Signup = ({programs, gradYears, errors, user}) => {
+const Signup = ({programs, gradYears, errors}) => {
 
     return (
-        <Layout user={user}>
+        <Layout>
             <>
                 <Container id="medium-main">
                     {errors != "" ?

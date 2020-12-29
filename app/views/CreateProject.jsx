@@ -8,10 +8,10 @@ import {
 } from 'react-bootstrap';
 
 
-const CreateProject =  ({errors, user}) => {
+const CreateProject =  ({errors}) => {
 
     return  (
-        <Layout user={user}>
+        <Layout>
             <Container id="small-main">
                 {errors !== "" ?
                     <div className = "alert alert-danger"> 

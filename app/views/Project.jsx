@@ -12,11 +12,11 @@ from 'react-bootstrap';
 import Layout from "./shared/Layout";
 
 
-const Project =  ({projectName, authors, abstract, tags, projectAuthor, user}) => {
+const Project =  ({projectName, authors, abstract, tags, projectAuthor}) => {
 
 
     return  (
-        <Layout user={user}>
+        <Layout>
             <Container>
                 <h2 id="project_name">{projectName}</h2>
 

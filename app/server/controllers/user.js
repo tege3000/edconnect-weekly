@@ -14,10 +14,8 @@ router.get('/signup', (req, res) => {
     const programs = School.getPrograms()
     const gradYears = School.getGradYears()
     const errors = req.flash("error")
-    const user = req.session.user
 
-
-    res.render('Signup', {programs: programs, gradYears: gradYears, errors: errors, user: user})
+    res.render('Signup', {programs: programs, gradYears: gradYears, errors: errors})
 });
 
 router.post('/signup', (req, res) => {
@@ -35,9 +33,8 @@ router.post('/signup', (req, res) => {
 })
 
 router.get('/login', (req, res) => {
-    const user = req.session.user
     const error = req.flash("error")
-    res.render('Login', {error: error, user: user})
+    res.render('Login', {error: error})
 })
 
 router.post('/login', (req, res) => {
