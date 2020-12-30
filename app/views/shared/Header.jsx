@@ -32,7 +32,7 @@ const Header =  ({user}) => {
                     {user ? 
                         <Nav className="justify-content-end">
                             <Nav.Link href="/logout">Logout</Nav.Link>
-                            <Nav.Link href="">Hi {user.firstname}</Nav.Link>
+                            <Nav.Link id="username" href="">Hi, {user.firstname}</Nav.Link>
                         </Nav>
                     :
                         <Nav className="justify-content-end">

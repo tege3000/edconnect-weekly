@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/projects/submit', (req, res) => {
     if(!req.session.user) {
-        res.redirect('/')
+        res.redirect('/login')
     }
     else {
         const errors = req.flash("error")
