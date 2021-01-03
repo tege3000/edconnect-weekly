@@ -19,12 +19,20 @@ router.post('/projects/submit', (req, res) => {
     const abstract = req.body.abstract
     const authors = req.body.authors
     const tags = req.body.tags
-    const createdBy = req.body.createdBy
+    const createdBy = req.session.user.id
 
     const authorsArr = authors.split(', ')
     const tagsArr = tags.split(', ')
 
-    const [status, data] = Projects.create(name, abstract, authorsArr, tagsArr, createdBy)
+    let createProjectDetails = {
+        name,
+        abstract,
+        "authors" : authorsArr,
+        "tags" : tagsArr,
+        createdBy
+    };
+
+    const [status, data] = Projects.create(createProjectDetails)
 
     if(status) {
         res.redirect('/')
