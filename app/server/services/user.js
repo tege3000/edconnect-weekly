@@ -1,24 +1,9 @@
-// imports
-const fs = require("fs");
-const path = require("path");
-const Users = require("../models/users").Users;
-const User = require("../models/users").User;
-
-// load data file
-const usersFile = path.join(__dirname, "../users.json");
-
-// helper functions
-const saveJsonFile = (file, data) => fs.writeFileSync(file, JSON.stringify({ data }));
-const getFileAsJson = (file) => JSON.parse(fs.readFileSync(file));
-const saveUsersToFile = (data) => saveJsonFile(usersFile, data);
-const id = () => Math.random().toString(36).substring(2);
-
-// populate users with data from file.
-const users = new Users();
-users.data = getFileAsJson(usersFile).data;
+const { translateError } = require("../models/helper");
+const User = require("../models/user");
+const users = require("../models/users").Users;
 
 /* Creates new user */
-const create = ({
+const create = async ({
   firstname,
   lastname,
   email,
@@ -27,28 +12,35 @@ const create = ({
   program,
   graduationYear,
 }) => {
-  const user = new User(
-    id(),
-    firstname,
-    lastname,
-    email,
-    password,
-    matricNumber,
-    program,
-    graduationYear
-  );
-  if (users.save(user)) {
-    saveUsersToFile(users.data);
-    return [true, user];
-  } else {
-    return [false, users.errors];
+  try {
+    const user = new User(
+      firstname,
+      lastname,
+      email,
+      matricNumber,
+      program,
+      graduationYear
+    );
+
+    user.setPassword(password)
+    if (user) {
+      await user.save()
+      return [true, user];
+    } else {
+      return [false, users.errors];
+    }
+  }
+  catch(e) {
+    console.log("found error again", translateError(e))
   }
 };
 
 /* Authenticate a user */
-const authenticate = (email, password) => {
-  if (users.authenticate(email, password)) {
-    return [true, users.getByEmail(email)];
+const authenticate = async (email, password) => {
+  const user = await User.findOne({email})
+
+  if (await user.validPassword(password)) {
+    return [true, user];
   } else {
     return [false, ["Invalid email/password"]];
   }
@@ -56,12 +48,12 @@ const authenticate = (email, password) => {
 
 /* Return user with specified id */
 const getById = (id) => {
-  return users.getById(id);
+  return User.findById(id);
 };
 
 /* Return all users */
 const getAll = () => {
-  return users.getAll();
+  return User.find();
 };
 
 module.exports = {

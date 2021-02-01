@@ -18,7 +18,7 @@ router.get('/signup', (req, res) => {
     res.render('Signup', {programs: programs, gradYears: gradYears, errors: errors})
 });
 
-router.post('/signup', (req, res) => {
+router.post('/signup', async(req, res) => {
     const firstname = req.body.firstName
     const lastname = req.body.lastName
     const email = req.body.email
@@ -27,7 +27,7 @@ router.post('/signup', (req, res) => {
     const program = req.body.program
     const graduationYear = req.body.graduationYear
 
-    const [isCreated, result] = User.create({firstname, lastname, email, password, matricNumber, program, graduationYear})
+    const [isCreated, result] = await User.create({firstname, lastname, email, password, matricNumber, program, graduationYear})
     if(isCreated) {
         req.session.user = result
         res.redirect('/')
@@ -44,11 +44,11 @@ router.get('/login', (req, res) => {
     res.render('Login', {error: error})
 })
 
-router.post('/login', (req, res) => {
+router.post('/login', async(req, res) => {
     const email = req.body.email
     const password = req.body.password
 
-    const [isSuccess, userObj] = User.authenticate(email, password)
+    const {isSuccess, userObj} = await User.authenticate(email, password)
     if(isSuccess) {
         req.session.user = userObj
         res.redirect('/')

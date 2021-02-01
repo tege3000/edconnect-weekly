@@ -53,18 +53,16 @@ router.get('/project/:id', (req, res) => {
     const createdBy = project.createdBy
 
     fetch(`http://localhost:4000/api/users/${createdBy}`)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            let projectAuthor = data.firstname + " " + data.lastname
-            res.render('Project', {projectName, authors, abstract, tags, projectAuthor})
-
-        })
-        .catch((error) => {
-            console.log("ERROR", error);
-        });
-
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        let projectAuthor = data.firstname + " " + data.lastname
+        res.render('Project', {projectName, authors, abstract, tags, projectAuthor})
+    })
+    .catch((error) => {
+        console.log("ERROR", error);
+    });
 })
 
 module.exports = router;

@@ -8,6 +8,9 @@ const app = express();
 const SERVER_PORT = process.env.SERVER_PORT;
 const register = require("@react-ssr/express/register");
 const flash = require('express-flash');
+const mongoose = require("mongoose")
+
+
 
 
 register(app).then(() => {
@@ -42,5 +45,28 @@ register(app).then(() => {
     app.use(express.static('public'));
     
     app.listen(SERVER_PORT, () => console.log('Server listening on port ' + SERVER_PORT));
+    mongoose.set("bufferCommands", false);
+
+    mongoose.connect(
+
+        process.env.MONGODB_URI, // connection string from .env file
+
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true,
+        },
+
+        // callback that’s called when connection succeeds or fails.
+
+        (err) => {
+            if (err) {
+                console.log("Error connecting to db: ", err);
+
+            } else {
+                console.log(`Connected to MongoDB @ ${process.env.MONGODB_URI}`);
+            }
+        }
+    );
 })
 
