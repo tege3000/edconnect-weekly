@@ -14,12 +14,12 @@ router.get('/projects/submit', (req, res) => {
     }
 })
 
-router.post('/projects/submit', (req, res) => {
+router.post('/projects/submit', async (req, res) => {
     const name = req.body.name
     const abstract = req.body.abstract
     const authors = req.body.authors
     const tags = req.body.tags
-    const createdBy = req.session.user.id
+    const createdBy = req.session.user._id
 
     const authorsArr = authors.split(', ')
     const tagsArr = tags.split(', ')
@@ -32,7 +32,7 @@ router.post('/projects/submit', (req, res) => {
         createdBy
     };
 
-    const [status, data] = Projects.create(createProjectDetails)
+    const [status, data] = await Projects.create(createProjectDetails)
 
     if(status) {
         res.redirect('/')
@@ -43,26 +43,20 @@ router.post('/projects/submit', (req, res) => {
     }
 })
 
-router.get('/project/:id', (req, res) => {
+router.get('/project/:id', async (req, res) => {
     const id = req.params.id
-    const project = Projects.getById(id)
+    const project = await Projects.getById(id)
+    console.log(project)
     const projectName = project.name
     const authors = project.authors
     const abstract = project.abstract
     const tags = project.tags
-    const createdBy = project.createdBy
+    const createdAt = project.createdAt
+    const updatedAt = project.updatedAt
 
-    fetch(`http://localhost:4000/api/users/${createdBy}`)
-    .then((response) => {
-        return response.json();
-    })
-    .then((data) => {
-        let projectAuthor = data.firstname + " " + data.lastname
-        res.render('Project', {projectName, authors, abstract, tags, projectAuthor})
-    })
-    .catch((error) => {
-        console.log("ERROR", error);
-    });
+    let projectAuthor = project.createdBy.firstname + " " + project.createdBy.lastname
+    res.render('Project', {projectName, authors, abstract, tags, projectAuthor, createdAt, updatedAt})
+    
 })
 
 module.exports = router;

@@ -7,9 +7,9 @@ const router = express.Router();
 
 router.get('/signup', (req, res) => {
 
-  // add code to render the Home Component, and pass in the projects  
+    // add code to render the Home Component, and pass in the projects  
 
-  // as a props
+    // as a props
 
     const programs = School.getPrograms()
     const gradYears = School.getGradYears()
@@ -48,7 +48,7 @@ router.post('/login', async(req, res) => {
     const email = req.body.email
     const password = req.body.password
 
-    const {isSuccess, userObj} = await User.authenticate(email, password)
+    const [isSuccess, userObj] = await User.authenticate(email, password)
     if(isSuccess) {
         req.session.user = userObj
         res.redirect('/')

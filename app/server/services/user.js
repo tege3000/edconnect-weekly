@@ -13,14 +13,14 @@ const create = async ({
   graduationYear,
 }) => {
   try {
-    const user = new User(
+    const user = new User({
       firstname,
       lastname,
       email,
       matricNumber,
       program,
       graduationYear
-    );
+    });
 
     user.setPassword(password)
     if (user) {
@@ -31,7 +31,7 @@ const create = async ({
     }
   }
   catch(e) {
-    console.log("found error again", translateError(e))
+    console.log(translateError(e))
   }
 };
 

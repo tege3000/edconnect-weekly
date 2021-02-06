@@ -12,7 +12,9 @@ from 'react-bootstrap';
 import Layout from "./shared/Layout";
 
 
-const Project =  ({projectName, authors, abstract, tags, projectAuthor}) => {
+const Project =  ({projectName, authors, abstract, tags, projectAuthor, createdAt, updatedAt}) => {
+    const CreatedAt = new Date(createdAt).toLocaleDateString()
+    const UpdatedAt = new Date(updatedAt).toLocaleDateString()
 
 
     return  (
@@ -35,8 +37,8 @@ const Project =  ({projectName, authors, abstract, tags, projectAuthor}) => {
                         <Col id="project_author"md={3}>
                             {projectAuthor}
                         </Col>
-                        <Col md={3}>2020-03-03</Col>
-                        <Col md={3}>2020-07-13</Col>
+                        <Col md={3}>{CreatedAt}</Col>
+                        <Col md={3}>{UpdatedAt}</Col>
                     </Row>
                 </Jumbotron>
 
