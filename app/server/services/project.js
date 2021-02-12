@@ -16,15 +16,11 @@ const create = async ({ name, abstract, authors, tags, createdBy }) => {
       tags,
       createdBy
     });
-    if (project) {
-      await project.save();
-      return [true, project];
-    } else {
-      return [false, projects.errors];
-    }
+    
+    return [true, await project.save()];
   }
   catch(e) {
-    return helper.translateError(e)
+    return [false, helper.translateError(e)];
   }
 };
 

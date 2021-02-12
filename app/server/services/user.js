@@ -23,15 +23,10 @@ const create = async ({
     });
 
     user.setPassword(password)
-    if (user) {
-      await user.save()
-      return [true, user];
-    } else {
-      return [false, users.errors];
-    }
+    return [true, await user.save()];
   }
   catch(e) {
-    return helper.translateError(e)
+    return [false, helper.translateError(e)]
   }
 };
 
