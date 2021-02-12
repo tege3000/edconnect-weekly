@@ -1,4 +1,4 @@
-const { translateError } = require("../models/helper");
+const helper = require("../models/helper");
 const User = require("../models/user");
 const users = require("../models/users").Users;
 
@@ -31,7 +31,7 @@ const create = async ({
     }
   }
   catch(e) {
-    console.log(translateError(e))
+    return helper.translateError(e)
   }
 };
 

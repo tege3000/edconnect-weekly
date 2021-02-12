@@ -1,5 +1,5 @@
 // imports
-const { translateError } = require("../models/helper");
+const helper = require("../models/helper");
 const Project = require("../models/project");
 const Projects = require("../models/projects").Projects;
 
@@ -24,7 +24,7 @@ const create = async ({ name, abstract, authors, tags, createdBy }) => {
     }
   }
   catch(e) {
-    console.log(translateError(e))
+    return helper.translateError(e)
   }
 };
 
