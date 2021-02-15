@@ -47,7 +47,6 @@ UserSchema.methods.setPassword = async function(enteredPassword) {
     }
 }
 
-
 UserSchema.methods.validPassword = async function(enteredPassword) {
     return this.password === crypto.pbkdf2Sync(enteredPassword, this.salt, 1000, 64, 'sha512').toString('hex')
 }

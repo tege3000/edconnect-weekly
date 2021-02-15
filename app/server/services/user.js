@@ -22,7 +22,7 @@ const create = async ({
       graduationYear
     });
 
-    user.setPassword(password)
+    await user.setPassword(password)
     return [true, await user.save()];
   }
   catch(e) {
@@ -34,7 +34,7 @@ const create = async ({
 const authenticate = async (email, password) => {
   const user = await User.findOne({email})
 
-  if (await user.validPassword(password)) {
+  if (user && await user.validPassword(password)) {
     return [true, user];
   } else {
     return [false, ["Invalid email/password"]];

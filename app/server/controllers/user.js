@@ -8,7 +8,6 @@ const router = express.Router();
 router.get('/signup', (req, res) => {
 
     // add code to render the Home Component, and pass in the projects  
-
     // as a props
 
     const programs = School.getPrograms()
